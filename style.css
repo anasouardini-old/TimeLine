@@ -1,0 +1,131 @@
+*{
+  margin: 0;
+}
+
+body{
+  background: #002;
+}
+
+.projectsbody{
+	height: 800px;
+	min-height: 100%;
+}
+
+.title{
+  color: #009;
+  background: #002;
+  font-size: 20px;
+  height: 100px;
+  txt-align: center;
+  display: block;
+}
+
+.title h1{
+  text-transform: capitalize;
+  margin-left: 40%;
+  padding-top: 1%;
+}
+
+.timeLine{
+	min-height: 400px;
+  height: 800px;
+	width: 100%;
+	display: flex;
+}
+
+.timeLine .tlItem{
+	height: 100%;
+	min-height: 400px;
+	width: 33.333%;
+	overflow: hidden;
+	position: relative;
+	transition: width .5s ease;
+}
+
+.timeLine .tlItem::before,
+.timeLine .tlItem::after{
+		height: 100%;
+		width: 101%;
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+}
+
+.timeLine .tlItem::before{
+	background: linear-gradient(to bottom, rgba(5,0,34,1), rgba(5,0,34,.7), transparent 100%);
+	transform: translate3d(0, 0, 0) translateY(-50%);
+	transition: all 1s ease;
+	opacity: 0;
+	z-index: 1;
+}
+
+.timeLine .tlItem::after{
+	background: linear-gradient(to right, rgba(7,7,26,.9), rgba(7,7,26,.8));
+	transition: all 1s ease;
+}
+
+.timeLine .tlItem:hover:after{
+	opacity: 0;
+	transition: all 1s ease;
+}
+
+.timeLine .tlItem:hover:before{
+	transform: translate3d(0, 0, 0) translateY(0);
+	opacity: 1;
+	transition: all 1s ease, opacity 1s ease;
+}
+
+.timeLine:hover .tlItem{
+	width: 32%;
+	transition: width .5s ease;
+}
+
+.timeLine .tlItem .tlBg{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background-size: cover;
+	background-position: center center;
+}
+
+.timeLine .tlItem:hover{
+	width: 44.5%;
+	transition: width .5s ease;
+}
+
+.timeLine .tlItem .tlContent{
+	transform: translate3d(0, 0, 0) translateY(-80%);
+	font-size: 5px;
+	color: #E8F7FF;
+	padding: 0 20px 0 20px;
+	transition: all 1s ease;
+	position: relative;
+	opacity: 0;
+	index: 1;
+	margin: auto;
+	text-align: center;
+}
+
+.timeLine .tlItem .tlContent .tlItemYear{
+	font-size: 30px;
+	color: #FFF;
+	min-width: 50%;
+	margin: 25% auto 0 auto;
+	text-align: center;
+}
+
+.timeLine .tlItem .tlContent h1{
+	color: #FFF;
+	font-size: 25px;
+}
+
+.timeLine .tlItem:hover .tlContent{
+	transform: translate3d(0, 0, 0) translateY(40%);
+	transition: all 1s ease;
+	transition-delay: .5s;
+	font-size: 25px;
+	opacity: 1;
+}
